@@ -37,6 +37,7 @@
             textUsuario = new TextBox();
             linkEsqueceuSenha = new LinkLabel();
             checkBox_mostrarSenha = new CheckBox();
+            linkRealizarCadastro = new LinkLabel();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -88,15 +89,16 @@
             // 
             txtSenha.Location = new Point(208, 389);
             txtSenha.Name = "txtSenha";
+            txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(209, 23);
-            txtSenha.TabIndex = 4;
+            txtSenha.TabIndex = 2;
             // 
             // textUsuario
             // 
             textUsuario.Location = new Point(208, 344);
             textUsuario.Name = "textUsuario";
             textUsuario.Size = new Size(209, 23);
-            textUsuario.TabIndex = 5;
+            textUsuario.TabIndex = 1;
             // 
             // linkEsqueceuSenha
             // 
@@ -105,7 +107,7 @@
             linkEsqueceuSenha.Location = new Point(208, 447);
             linkEsqueceuSenha.Name = "linkEsqueceuSenha";
             linkEsqueceuSenha.Size = new Size(117, 15);
-            linkEsqueceuSenha.TabIndex = 6;
+            linkEsqueceuSenha.TabIndex = 4;
             linkEsqueceuSenha.TabStop = true;
             linkEsqueceuSenha.Text = "Esqueceu sua senha?";
             // 
@@ -116,9 +118,21 @@
             checkBox_mostrarSenha.Location = new Point(208, 418);
             checkBox_mostrarSenha.Name = "checkBox_mostrarSenha";
             checkBox_mostrarSenha.Size = new Size(101, 19);
-            checkBox_mostrarSenha.TabIndex = 7;
+            checkBox_mostrarSenha.TabIndex = 3;
             checkBox_mostrarSenha.Text = "Mostrar senha";
             checkBox_mostrarSenha.UseVisualStyleBackColor = true;
+            checkBox_mostrarSenha.Click += checkBox_mostrarSenha_Click;
+            // 
+            // linkRealizarCadastro
+            // 
+            linkRealizarCadastro.AutoSize = true;
+            linkRealizarCadastro.LinkColor = Color.SteelBlue;
+            linkRealizarCadastro.Location = new Point(263, 624);
+            linkRealizarCadastro.Name = "linkRealizarCadastro";
+            linkRealizarCadastro.Size = new Size(100, 15);
+            linkRealizarCadastro.TabIndex = 5;
+            linkRealizarCadastro.TabStop = true;
+            linkRealizarCadastro.Text = "Realizar cadastro?";
             // 
             // Loguin
             // 
@@ -127,6 +141,7 @@
             BackColor = Color.DarkSlateGray;
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(607, 669);
+            Controls.Add(linkRealizarCadastro);
             Controls.Add(checkBox_mostrarSenha);
             Controls.Add(linkEsqueceuSenha);
             Controls.Add(textUsuario);
@@ -138,10 +153,11 @@
             DoubleBuffered = true;
             ForeColor = Color.Black;
             FormBorderStyle = FormBorderStyle.FixedSingle;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             MaximizeBox = false;
             Name = "Loguin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Nice";
+            Text = "Study project";
             Load += Loguin_Load;
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
@@ -159,5 +175,6 @@
         private TextBox textUsuario;
         private LinkLabel linkEsqueceuSenha;
         private CheckBox checkBox_mostrarSenha;
+        private LinkLabel linkRealizarCadastro;
     }
 }

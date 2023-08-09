@@ -16,5 +16,11 @@ namespace windowsFforms_login
         {
 
         }
+
+        private void checkBox_mostrarSenha_Click(object sender, EventArgs e)
+        {
+            //mostrar senha
+            txtSenha.PasswordChar = checkBox_mostrarSenha.Checked ? '\0' : '*';
+        }
     }
 }
