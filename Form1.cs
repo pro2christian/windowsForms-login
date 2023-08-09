@@ -1,5 +1,7 @@
+using MySql.Data.MySqlClient;
 namespace windowsFforms_login
 {
+    
     public partial class Loguin : Form
     {
         public Loguin()
