@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Loguin));
             pictureBox1 = new PictureBox();
             pictureBox2 = new PictureBox();
             label1 = new Label();
@@ -35,18 +36,18 @@
             txtSenha = new TextBox();
             textUsuario = new TextBox();
             linkEsqueceuSenha = new LinkLabel();
-            checkBox1 = new CheckBox();
+            checkBox_mostrarSenha = new CheckBox();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // pictureBox1
             // 
-            pictureBox1.BackgroundImage = Properties.Resources.nice_systems196x1471;
-            pictureBox1.BackgroundImageLayout = ImageLayout.None;
-            pictureBox1.Location = new Point(434, 18);
+            pictureBox1.BackgroundImage = (Image)resources.GetObject("pictureBox1.BackgroundImage");
+            pictureBox1.BackgroundImageLayout = ImageLayout.Center;
+            pictureBox1.Location = new Point(412, 14);
             pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(198, 130);
+            pictureBox1.Size = new Size(142, 99);
             pictureBox1.TabIndex = 0;
             pictureBox1.TabStop = false;
             // 
@@ -54,7 +55,7 @@
             // 
             pictureBox2.BackgroundImage = Properties.Resources.logo112x112;
             pictureBox2.BackgroundImageLayout = ImageLayout.None;
-            pictureBox2.Location = new Point(281, 493);
+            pictureBox2.Location = new Point(257, 495);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(108, 126);
             pictureBox2.TabIndex = 1;
@@ -65,7 +66,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(162, 345);
+            label1.Location = new Point(138, 347);
             label1.Name = "label1";
             label1.Size = new Size(56, 17);
             label1.TabIndex = 2;
@@ -76,7 +77,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(170, 390);
+            label2.Location = new Point(146, 392);
             label2.Name = "label2";
             label2.Size = new Size(46, 17);
             label2.TabIndex = 3;
@@ -85,14 +86,14 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(232, 387);
+            txtSenha.Location = new Point(208, 389);
             txtSenha.Name = "txtSenha";
             txtSenha.Size = new Size(209, 23);
             txtSenha.TabIndex = 4;
             // 
             // textUsuario
             // 
-            textUsuario.Location = new Point(232, 342);
+            textUsuario.Location = new Point(208, 344);
             textUsuario.Name = "textUsuario";
             textUsuario.Size = new Size(209, 23);
             textUsuario.TabIndex = 5;
@@ -101,23 +102,23 @@
             // 
             linkEsqueceuSenha.AutoSize = true;
             linkEsqueceuSenha.LinkColor = Color.SteelBlue;
-            linkEsqueceuSenha.Location = new Point(232, 438);
+            linkEsqueceuSenha.Location = new Point(208, 447);
             linkEsqueceuSenha.Name = "linkEsqueceuSenha";
             linkEsqueceuSenha.Size = new Size(117, 15);
             linkEsqueceuSenha.TabIndex = 6;
             linkEsqueceuSenha.TabStop = true;
             linkEsqueceuSenha.Text = "Esqueceu sua senha?";
             // 
-            // checkBox1
+            // checkBox_mostrarSenha
             // 
-            checkBox1.AutoSize = true;
-            checkBox1.ForeColor = Color.White;
-            checkBox1.Location = new Point(232, 416);
-            checkBox1.Name = "checkBox1";
-            checkBox1.Size = new Size(101, 19);
-            checkBox1.TabIndex = 7;
-            checkBox1.Text = "Mostrar senha";
-            checkBox1.UseVisualStyleBackColor = true;
+            checkBox_mostrarSenha.AutoSize = true;
+            checkBox_mostrarSenha.ForeColor = Color.White;
+            checkBox_mostrarSenha.Location = new Point(208, 418);
+            checkBox_mostrarSenha.Name = "checkBox_mostrarSenha";
+            checkBox_mostrarSenha.Size = new Size(101, 19);
+            checkBox_mostrarSenha.TabIndex = 7;
+            checkBox_mostrarSenha.Text = "Mostrar senha";
+            checkBox_mostrarSenha.UseVisualStyleBackColor = true;
             // 
             // Loguin
             // 
@@ -125,8 +126,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DarkSlateGray;
             BackgroundImageLayout = ImageLayout.Center;
-            ClientSize = new Size(662, 669);
-            Controls.Add(checkBox1);
+            ClientSize = new Size(607, 669);
+            Controls.Add(checkBox_mostrarSenha);
             Controls.Add(linkEsqueceuSenha);
             Controls.Add(textUsuario);
             Controls.Add(txtSenha);
@@ -157,6 +158,6 @@
         private TextBox txtSenha;
         private TextBox textUsuario;
         private LinkLabel linkEsqueceuSenha;
-        private CheckBox checkBox1;
+        private CheckBox checkBox_mostrarSenha;
     }
 }
