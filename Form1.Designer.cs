@@ -56,7 +56,7 @@
             // 
             pictureBox2.BackgroundImage = Properties.Resources.logo112x112;
             pictureBox2.BackgroundImageLayout = ImageLayout.None;
-            pictureBox2.Location = new Point(257, 495);
+            pictureBox2.Location = new Point(245, 495);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(108, 126);
             pictureBox2.TabIndex = 1;
@@ -67,7 +67,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(138, 347);
+            label1.Location = new Point(144, 347);
             label1.Name = "label1";
             label1.Size = new Size(56, 17);
             label1.TabIndex = 2;
@@ -78,7 +78,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.White;
-            label2.Location = new Point(146, 392);
+            label2.Location = new Point(152, 392);
             label2.Name = "label2";
             label2.Size = new Size(46, 17);
             label2.TabIndex = 3;
@@ -87,7 +87,7 @@
             // 
             // txtSenha
             // 
-            txtSenha.Location = new Point(208, 389);
+            txtSenha.Location = new Point(214, 389);
             txtSenha.Name = "txtSenha";
             txtSenha.PasswordChar = '*';
             txtSenha.Size = new Size(209, 23);
@@ -95,7 +95,7 @@
             // 
             // textUsuario
             // 
-            textUsuario.Location = new Point(208, 344);
+            textUsuario.Location = new Point(214, 344);
             textUsuario.Name = "textUsuario";
             textUsuario.Size = new Size(209, 23);
             textUsuario.TabIndex = 1;
@@ -104,7 +104,7 @@
             // 
             linkEsqueceuSenha.AutoSize = true;
             linkEsqueceuSenha.LinkColor = Color.SteelBlue;
-            linkEsqueceuSenha.Location = new Point(208, 447);
+            linkEsqueceuSenha.Location = new Point(214, 447);
             linkEsqueceuSenha.Name = "linkEsqueceuSenha";
             linkEsqueceuSenha.Size = new Size(117, 15);
             linkEsqueceuSenha.TabIndex = 4;
@@ -115,7 +115,7 @@
             // 
             checkBox_mostrarSenha.AutoSize = true;
             checkBox_mostrarSenha.ForeColor = Color.White;
-            checkBox_mostrarSenha.Location = new Point(208, 418);
+            checkBox_mostrarSenha.Location = new Point(214, 418);
             checkBox_mostrarSenha.Name = "checkBox_mostrarSenha";
             checkBox_mostrarSenha.Size = new Size(101, 19);
             checkBox_mostrarSenha.TabIndex = 3;
@@ -127,12 +127,13 @@
             // 
             linkRealizarCadastro.AutoSize = true;
             linkRealizarCadastro.LinkColor = Color.SteelBlue;
-            linkRealizarCadastro.Location = new Point(263, 624);
+            linkRealizarCadastro.Location = new Point(250, 624);
             linkRealizarCadastro.Name = "linkRealizarCadastro";
             linkRealizarCadastro.Size = new Size(100, 15);
             linkRealizarCadastro.TabIndex = 5;
             linkRealizarCadastro.TabStop = true;
             linkRealizarCadastro.Text = "Realizar cadastro?";
+            linkRealizarCadastro.LinkClicked += linkRealizarCadastro_LinkClicked;
             // 
             // Loguin
             // 

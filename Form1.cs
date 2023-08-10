@@ -1,7 +1,7 @@
 using MySql.Data.MySqlClient;
 namespace windowsFforms_login
 {
-    
+
     public partial class Loguin : Form
     {
         public Loguin()
@@ -23,6 +23,13 @@ namespace windowsFforms_login
         {
             //mostrar senha
             txtSenha.PasswordChar = checkBox_mostrarSenha.Checked ? '\0' : '*';
+        }
+
+        private void linkRealizarCadastro_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            criarCadastro criar = new criarCadastro();
+            criar.Show();
+            this.Hide();
         }
     }
 }
