@@ -78,6 +78,7 @@
             buttonEnviar.TabIndex = 4;
             buttonEnviar.Text = "Enviar";
             buttonEnviar.UseVisualStyleBackColor = true;
+            buttonEnviar.Click += buttonEnviar_Click;
             // 
             // linkLoguin
             // 
