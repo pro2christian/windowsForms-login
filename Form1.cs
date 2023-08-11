@@ -29,7 +29,8 @@ namespace windowsFforms_login
         {
             criarCadastro criar = new criarCadastro();
             criar.Show();
-            this.Hide();
+           
+            
         }
     }
 }

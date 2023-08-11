@@ -27,43 +27,93 @@ namespace windowsFforms_login
 
         private void linkLoguin_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Loguin entrar = new Loguin();
-            entrar.Show();
+            if (Application.OpenForms.OfType<Loguin>().Count() > 0)
+            {
+                Application.OpenForms.OfType<Loguin>().First().Focus();
+            }
+            else
+            {
+                Loguin entrar = new Loguin();
+                entrar.Show();
+            }
+
             this.Close();
 
         }
 
         private void buttonEnviar_Click(object sender, EventArgs e)
         {
+            void limpaForms()
+            {
+                txtUser.Text = string.Empty;
+                txtSenha.Text = string.Empty;
+                txtconfirmarSenha.Text = string.Empty;
+            }
+
             try
             {
+                
                 //insert
                 conexao = new MySqlConnection(data_source);
                 conexao.Open();
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexao;
 
-                if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtSenha.Text)){
+                if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtSenha.Text))
+                {
                     MessageBox.Show("Os campos usúario & senha devem ser preenchidos",
-                                    "Erro", 
-                                    MessageBoxButtons.OK, 
+                                    "Erro",
+                                    MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
                     return;
                 }
-                                            
-                var dt = DateTime.Now.ToString(@"yyy-MM-dd HH:mm:ss");
-                cmd.CommandText = "INSERT INTO cadastro (usuario, senha, data)" +
-                     "VALUES" +
-                     "(@usuario,@senha,@data)";
-                
-                cmd.Parameters.AddWithValue("@usuario", txtUser.Text);
-                cmd.Parameters.AddWithValue("@senha", txtSenha.Text);
-                cmd.Parameters.AddWithValue("@data",dt);
-                cmd.ExecuteNonQuery();
 
-                MessageBox.Show("Gravado com sucesso","Sucesso",
-                                MessageBoxButtons.OK, 
-                                MessageBoxIcon.Information);
+                if (txtSenha.Text == txtconfirmarSenha.Text)
+                {
+
+                    //usuario existe
+                   cmd.CommandText = "SELECT COUNT(*) FROM cadastro WHERE usuario = @usuario";
+                    
+                    
+                    cmd.Parameters.AddWithValue("@usuario", txtUser.Text);
+                                        
+                    int existe = Convert.ToInt32(cmd.ExecuteScalar());
+
+                    if (existe > 0)
+                    {
+                        MessageBox.Show("Usuário já cadastrado",
+                                        "Erro",
+                                        MessageBoxButtons.OK);
+                    }
+                    else
+                    {
+                        cmd.Parameters.Clear();
+                        var dt = DateTime.Now.ToString(@"yyy-MM-dd HH:mm:ss");
+                        cmd.CommandText = "INSERT INTO cadastro (usuario, senha, data)" +
+                             "VALUES" +
+                             "(@usuario,@senha,@data)";
+
+                        cmd.Parameters.AddWithValue("@usuario", txtUser.Text);
+                        cmd.Parameters.AddWithValue("@senha", txtSenha.Text);
+                        cmd.Parameters.AddWithValue("@data", dt);
+                        cmd.ExecuteNonQuery();
+
+                        MessageBox.Show("Gravado com sucesso", "Sucesso",
+                                        MessageBoxButtons.OK,
+                                        MessageBoxIcon.Information);
+                    }
+                    limpaForms();
+                    txtUser.Focus();
+                }
+                else
+                {
+                    MessageBox.Show("As senhas devem ser iguais", 
+                                    "Erro", MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                    limpaForms();
+                    txtUser.Focus();
+
+                }
 
             }
             catch (MySqlException ex)
