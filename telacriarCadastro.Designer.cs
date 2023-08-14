@@ -1,6 +1,6 @@
 ﻿namespace windowsFforms_login
 {
-    partial class criarCadastro
+    partial class telacriarCadastro
     {
         /// <summary>
         /// Required designer variable.

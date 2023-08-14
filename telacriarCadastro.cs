@@ -15,12 +15,12 @@ using System.Windows.Forms;
 
 namespace windowsFforms_login
 {
-    public partial class criarCadastro : Form
+    public partial class telacriarCadastro : Form
     {
         private MySqlConnection conexao;
         private string data_source = "datasource = localhost; username = root; password = ; database = controle; Allow zero datetime=True";
 
-        public criarCadastro()
+        public telacriarCadastro()
         {
             InitializeComponent();
         }
@@ -43,6 +43,7 @@ namespace windowsFforms_login
 
         private void buttonEnviar_Click(object sender, EventArgs e)
         {
+
             void limpaForms()
             {
                 txtUser.Text = string.Empty;
@@ -55,16 +56,19 @@ namespace windowsFforms_login
                 
                 //insert
                 conexao = new MySqlConnection(data_source);
-                conexao.Open();
+                
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexao;
+                conexao.Open();
 
                 if (string.IsNullOrWhiteSpace(txtUser.Text) || string.IsNullOrWhiteSpace(txtSenha.Text))
                 {
-                    MessageBox.Show("Os campos usúario & senha devem ser preenchidos",
+                  MessageBox.Show("Os campos Usúario e Senha devem ser preenchidos!!",
                                     "Erro",
                                     MessageBoxButtons.OK,
                                     MessageBoxIcon.Information);
+                  limpaForms();
+                   txtUser.Focus();
                     return;
                 }
 
@@ -81,7 +85,7 @@ namespace windowsFforms_login
 
                     if (existe > 0)
                     {
-                        MessageBox.Show("Usuário já cadastrado",
+                        MessageBox.Show("Usuário já cadastrado!",
                                         "Erro",
                                         MessageBoxButtons.OK);
                     }

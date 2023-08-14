@@ -33,11 +33,12 @@
             pictureBox2 = new PictureBox();
             label1 = new Label();
             label2 = new Label();
-            txtSenha = new TextBox();
-            textUsuario = new TextBox();
+            txtSenhaLoguin = new TextBox();
+            textUsuarioLoguin = new TextBox();
             linkEsqueceuSenha = new LinkLabel();
             checkBox_mostrarSenha = new CheckBox();
             linkRealizarCadastro = new LinkLabel();
+            button1 = new Button();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
@@ -85,29 +86,29 @@
             label2.Text = "Senha:";
             label2.Click += label2_Click;
             // 
-            // txtSenha
+            // txtSenhaLoguin
             // 
-            txtSenha.Location = new Point(214, 389);
-            txtSenha.Name = "txtSenha";
-            txtSenha.PasswordChar = '*';
-            txtSenha.Size = new Size(209, 23);
-            txtSenha.TabIndex = 2;
+            txtSenhaLoguin.Location = new Point(214, 389);
+            txtSenhaLoguin.Name = "txtSenhaLoguin";
+            txtSenhaLoguin.PasswordChar = '*';
+            txtSenhaLoguin.Size = new Size(209, 23);
+            txtSenhaLoguin.TabIndex = 2;
             // 
-            // textUsuario
+            // textUsuarioLoguin
             // 
-            textUsuario.Location = new Point(214, 344);
-            textUsuario.Name = "textUsuario";
-            textUsuario.Size = new Size(209, 23);
-            textUsuario.TabIndex = 1;
+            textUsuarioLoguin.Location = new Point(214, 344);
+            textUsuarioLoguin.Name = "textUsuarioLoguin";
+            textUsuarioLoguin.Size = new Size(209, 23);
+            textUsuarioLoguin.TabIndex = 1;
             // 
             // linkEsqueceuSenha
             // 
             linkEsqueceuSenha.AutoSize = true;
             linkEsqueceuSenha.LinkColor = Color.SteelBlue;
-            linkEsqueceuSenha.Location = new Point(214, 447);
+            linkEsqueceuSenha.Location = new Point(214, 477);
             linkEsqueceuSenha.Name = "linkEsqueceuSenha";
             linkEsqueceuSenha.Size = new Size(117, 15);
-            linkEsqueceuSenha.TabIndex = 4;
+            linkEsqueceuSenha.TabIndex = 6;
             linkEsqueceuSenha.TabStop = true;
             linkEsqueceuSenha.Text = "Esqueceu sua senha?";
             // 
@@ -130,10 +131,20 @@
             linkRealizarCadastro.Location = new Point(250, 624);
             linkRealizarCadastro.Name = "linkRealizarCadastro";
             linkRealizarCadastro.Size = new Size(100, 15);
-            linkRealizarCadastro.TabIndex = 5;
+            linkRealizarCadastro.TabIndex = 7;
             linkRealizarCadastro.TabStop = true;
             linkRealizarCadastro.Text = "Realizar cadastro?";
             linkRealizarCadastro.LinkClicked += linkRealizarCadastro_LinkClicked;
+            // 
+            // button1
+            // 
+            button1.Location = new Point(214, 443);
+            button1.Name = "button1";
+            button1.Size = new Size(75, 23);
+            button1.TabIndex = 4;
+            button1.Text = "Enviar";
+            button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // Loguin
             // 
@@ -142,11 +153,12 @@
             BackColor = Color.DarkSlateGray;
             BackgroundImageLayout = ImageLayout.Center;
             ClientSize = new Size(607, 669);
+            Controls.Add(button1);
             Controls.Add(linkRealizarCadastro);
             Controls.Add(checkBox_mostrarSenha);
             Controls.Add(linkEsqueceuSenha);
-            Controls.Add(textUsuario);
-            Controls.Add(txtSenha);
+            Controls.Add(textUsuarioLoguin);
+            Controls.Add(txtSenhaLoguin);
             Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(pictureBox2);
@@ -172,10 +184,11 @@
         private PictureBox pictureBox2;
         private Label label1;
         private Label label2;
-        private TextBox txtSenha;
-        private TextBox textUsuario;
+        private TextBox txtSenhaLoguin;
+        private TextBox textUsuarioLoguin;
         private LinkLabel linkEsqueceuSenha;
         private CheckBox checkBox_mostrarSenha;
         private LinkLabel linkRealizarCadastro;
+        private Button button1;
     }
 }
