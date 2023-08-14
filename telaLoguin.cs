@@ -63,13 +63,14 @@ namespace windowsFforms_login
 
 
                 //verifica se o usuario existe 
+                
                 cmd.CommandText = "SELECT COUNT(*) FROM cadastro WHERE usuario = @usuario";
 
-                cmd.Parameters.AddWithValue("@usuario", txtSenhaLoguin.Text);
+                cmd.Parameters.AddWithValue("@usuario", textUsuarioLoguin.Text);
 
                 int existe = Convert.ToInt32(cmd.ExecuteScalar());
 
-                if (existe > 0)
+                if (existe == 0)
                 {
                     MessageBox.Show("Usuário não cadastrado",
                                     "Erro",
@@ -88,7 +89,7 @@ namespace windowsFforms_login
                     cmd.CommandText = "SELECT COUNT(*) FROM cadastro WHERE usuario = @usuario AND senha = @senha";
 
                     int naoExiste = Convert.ToInt32(cmd.ExecuteScalar());
-
+                                       
                     if (naoExiste == 0)
                     {
                         MessageBox.Show("Senha Incorreta!",
